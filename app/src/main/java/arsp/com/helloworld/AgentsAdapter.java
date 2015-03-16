@@ -15,14 +15,12 @@ import java.util.List;
 /**
  * Created by alonch on 12/03/15.
  */
-public class AgentsAdapter extends ArrayAdapter<Agent> implements AdapterView.OnItemClickListener{
+public class AgentsAdapter extends ArrayAdapter<Agent>{
 
     private int selected = -1;
-    AdapterView.OnItemClickListener listener;
 
-    public AgentsAdapter(Context context, AdapterView.OnItemClickListener listener) {
+    public AgentsAdapter(Context context) {
         super(context, R.layout.agent_item, R.id.name);
-        this.listener = listener;
     }
 
     public void setSelected(int position) {
@@ -42,14 +40,7 @@ public class AgentsAdapter extends ArrayAdapter<Agent> implements AdapterView.On
         }else{
             color = R.color.background_holo_light;
         }
-        //color = Resources.getSystem().getColor(color);
         view.setBackgroundResource(color);
         return view;
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        setSelected(position);
-        listener.onItemClick(parent, view, position, id);
     }
 }

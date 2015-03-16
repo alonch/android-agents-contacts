@@ -43,7 +43,7 @@ public class AgentsModel {
     }
 
     public void getAllAsync(Async<Agent[]> agents){
-        String url = "http://10.163.101.154:1111/agents";
+        String url = "http://10.163.101.34:1111/agents";
         GsonRequest request = new GsonRequest(url, agents);
         queue.add(request);
     }
